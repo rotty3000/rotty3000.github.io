@@ -1,11 +1,11 @@
 # Site wide configuration
 
-title: Site Title
+title: rotty3000
+logo:
 locale: en_US
-description: Describe your website here.
-logo: site-logo.png
+description: "My personal thought disposal, where after posting I hope to move on."
 search: true
-url: 
+url: http://rotty3000.github.io
 
 
 # Jekyll configuration
@@ -32,13 +32,13 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 
 # Site owner
 owner:
-  name: Your Name
+  name: Raymond Augé
   avatar: bio-photo.jpg
-  email: you@email.com
+  email: rotty3000@gmail.com
   disqus-shortname:
-  twitter: #username
+  twitter: rotty3000
   facebook: #username
-  github: #username
+  github: rotty3000
   stackexchange: #http://stackoverflow.com/users/123456/username
   linkedin: #username
   instagram: #username
@@ -49,5 +49,5 @@ owner:
     analytics:
     verify:
     ad-client:
-    ad-slot: 
+    ad-slot:
   bing-verify:
