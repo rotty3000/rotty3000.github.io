@@ -5,7 +5,7 @@ logo: site-logo.svg
 locale: en_US
 description: "My personal thought disposal, where after posting I hope to move on."
 search: true
-url:
+url: http://rotty3000.github.io
 
 
 # Jekyll configuration
