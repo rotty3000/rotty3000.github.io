@@ -27,3 +27,40 @@ sitemap: false
 @import "vendor/font-awesome/font-awesome";
 @import "vendor/magnific-popup/magnific-popup";
 @import "simple-search";
+
+.bio-photo {
+	display: none;
+	@include media($large) {
+		display: block;
+		width: 150px;
+		height: auto;
+		margin-bottom: 10px;
+		@include rounded(0px);
+		@include clearfix;
+	}
+}
+
+.navigation-wrapper ul {
+	margin: 0 0 20px;
+}
+
+.masthead {
+	.wrap {
+		{% if site.logo != null %}
+		background-image: url('/images/{{ site.logo }}');
+		background-repeat: no-repeat;
+		background-size:  200px auto;
+		margin-left: 200px;
+		min-height: 200px;
+		padding-left: 200px;
+		padding-top: 1em;
+		text-align: initial;
+		{% endif %}
+	}
+	.site-title {
+		margin: 0 0;
+	}
+	.site-description {
+		margin: 0 0;
+	}
+}

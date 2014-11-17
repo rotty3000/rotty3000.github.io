@@ -1,11 +1,11 @@
 # Site wide configuration
 
 title: rotty3000
-logo:
+logo: site-logo.svg
 locale: en_US
 description: "My personal thought disposal, where after posting I hope to move on."
 search: true
-url: http://rotty3000.github.io
+url:
 
 
 # Jekyll configuration
@@ -33,7 +33,7 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 # Site owner
 owner:
   name: Raymond Augé
-  avatar: bio-photo.jpg
+  avatar: me-2.jpg
   email: rotty3000@gmail.com
   disqus-shortname:
   twitter: rotty3000
@@ -45,7 +45,7 @@ owner:
   flickr: #username
   tumblr: #username
   google:
-    plus: #username
+    plus: RaymondAuge
     analytics:
     verify:
     ad-client:
