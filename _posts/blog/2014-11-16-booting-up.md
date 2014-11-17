@@ -10,7 +10,7 @@ share: true
 
 I've been wanting to setup a personal blog for a while. It'll probably be of little use to most people but I'm in need of a place to do brain dumps mostly for the purpose of ranting and otherwise working through thoughts which plague me.
 
-I might jump from science to software engineering, neither of which I know much about, though both intrigue and interest me greatly.
+I might jump from software engineering to science, neither of which I know much about, though both intrigue and interest me greatly.
 
 Anyhow, That's all for now.
 
