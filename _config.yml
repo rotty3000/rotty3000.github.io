@@ -4,7 +4,7 @@ title: rotty3000
 logo: site-logo.svg
 locale: en_US
 description: "My personal thought disposal area, where after posting I hope to move on."
-search: true
+search: false
 url: http://rotty3000.github.io
 
 
