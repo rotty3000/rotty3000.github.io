@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "booting up..."
-categories: blog
+categories: blog, random
 excerpt:
 tags: []
 author: raymond_auge
