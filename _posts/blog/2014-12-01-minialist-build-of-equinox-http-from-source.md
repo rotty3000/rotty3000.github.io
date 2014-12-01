@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Minialist Build of Equinox Http From Source"
+title: "Minimalist Build of Equinox Http From Source"
 modified:
 categories: blog
 excerpt: "Building eclipse parts can be pretty hard. There are some great tutorials out there ..."
