@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "booting up..."
-categories: blog, random
-excerpt:
+categories: blog
+excerpt: "I've been wanting to setup a personal blog for a while..."
 tags: []
 author: raymond_auge
 share: true
