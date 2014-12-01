@@ -35,6 +35,7 @@ Using the following commands I can do just that!
 export MAVEN_OPTS="-Xmx2048m -Declipse.p2.mirrors=false"
 
 # Clone the platform aggregator repo and init the submodules
+# Note: we deliberately didn't recurse through the modules
 git clone -b master --progress git://git.eclipse.org/gitroot/platform/eclipse.platform.releng.aggregator.git
 cd eclipse.platform.releng.aggregator
 git submodule init
