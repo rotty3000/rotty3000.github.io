@@ -31,7 +31,7 @@ I also want to make sure I can consume these from a maven repo, so I need to ens
 Using the following commands I can do just that!
 
 {% highlight bash %}
-# Save this in your .profile or .bashrc for reuse, speeds up the build
+# (optional) Save this in your .profile or .bashrc for reuse, speeds up the build
 export MAVEN_OPTS="-Xmx2048m -Declipse.p2.mirrors=false"
 
 # Clone the platform aggregator repo and init the submodules
