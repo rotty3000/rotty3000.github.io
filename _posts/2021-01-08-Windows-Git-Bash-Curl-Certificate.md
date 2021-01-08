@@ -5,9 +5,9 @@ excerpt: How to configure Git Bash CURL command to use corporate certificat with
 
 Recently I had the need to use Windows... where I had to use Git. Thankfully there is a product called [Git Bash](https://gitforwindows.org) which saved me.
 
-In the meantime I had suddenly the need to make some curl requests to HTTPS endpoints AND I'm on a machine which has a corporate security proxy.
+In the meantime I had suddenly the need to make some curl requests to HTTPS endpoints AND I'm on a machine which has a corporate security proxy. Nice thing is that Git Bash also includes curl (among several other necessary commands.)
 
-I saw errors like:
+But when I tried to use it I saw errors like:
 
 ```bash
 foo@bar MINGW64 ~
@@ -23,11 +23,11 @@ establish a secure connection to it. To learn more about this situation and
 how to fix it, please visit the web page mentioned above.
 ```
 
-In order to get through the proxy a corporate certificate is required.
+Seemed in order to get through the proxy a corporate certificate is required.
 
-Now, at that moment I could not invoke admin rights to place the certificate into the mingw install directory as instructed, so how to proceed?
+Now, at that moment I could not invoke admin rights to place the certificate into the Git Bash `mingw` install directory as instructed, so how to proceed?
 
-You'll notice that later in the documentation it describes that curl has a environment variable `CURL_CA_BUNDLE` that does not require admin rights modification of the file system.
+You'll notice that later in the [documentation](https://curl.haxx.se/docs/sslcerts.html) it describes that curl has a environment variable `CURL_CA_BUNDLE` that does not require admin rights to modification of the file system.
 
 Edit your `~/.bashrc` file and add the following:
 
