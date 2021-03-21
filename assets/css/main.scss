@@ -8,3 +8,7 @@ $link-color: #4A525B;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+.archive__item a {
+    text-decoration: none;
+}
