@@ -22,14 +22,14 @@
 #logo: site-logo.svg
 #search: false
 
-title: rotty3000.github.io
+title: rotty3000.doublebite.com
 logo: "/assets/images/site-logo.svg"
-name: rotty3000.github.io
+name: rotty3000.doublebite.com
 email: rotty3000@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   My personal thoughts.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://rotty3000.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://rotty3000.doublebite.com" # the base hostname & protocol for your site, e.g. http://example.com
 repository: "rotty3000/rotty3000.github.io"
 twitter_username: rotty3000
 github_username:  rotty3000
