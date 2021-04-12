@@ -7,7 +7,7 @@ excerpt: Apache Felix Gogo is by far one of the most potent tools in any OSGi de
 
 * `cm:createfactoryconfiguration` - create a factory configuration (maps to the Configuration Admin method [`createFactoryConfiguration(String)`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/cm/ConfigurationAdmin.html#createFactoryConfiguration-java.lang.String-) or [`createFactoryConfiguration(String,String)`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/cm/ConfigurationAdmin.html#createFactoryConfiguration-java.lang.String-java.lang.String-))
 * `cm:getconfiguration` - create a single configuration (maps to the Configuration Admin method [`getConfiguration(String)`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/cm/ConfigurationAdmin.html#getConfiguration-java.lang.String-) or [`getConfiguration(String,String)`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/cm/ConfigurationAdmin.html#getConfiguration-java.lang.String-java.lang.String-))
-* `cm:getfactoryconfiguration` - get or create a factory configuration (maps to the Configuration Admin method [`getFactoryConfiguration(String,String)`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/cm/ConfigurationAdmin.html#getFactoryConfiguration-java.lang.String-java.lang.String-) or [`getFactoryConfiguration(String,String,String)`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/cm/ConfigurationAdmin.html#getFactoryConfiguration-java.lang.String-java.lang.String-java.lang.String-)) 
+* `cm:getfactoryconfiguration` - get or create a factory configuration (maps to the Configuration Admin method [`getFactoryConfiguration(String,String)`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/cm/ConfigurationAdmin.html#getFactoryConfiguration-java.lang.String-java.lang.String-) or [`getFactoryConfiguration(String,String,String)`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/cm/ConfigurationAdmin.html#getFactoryConfiguration-java.lang.String-java.lang.String-java.lang.String-))
 * `cm:listconfigurations` - list configurations (maps to the Configuration Admin method [`listConfigurations(String)`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/cm/ConfigurationAdmin.html#listConfigurations-java.lang.String-))
 
 ***Note:*** *You may find that when using `help` the commands come up in camel case. Luckily commands are case insensitive so you can use all lower case to simplify execution if you choose.*
@@ -153,7 +153,16 @@ Earlier I mentioned:
 
 > if you are fortunate enough to have access to a very modern version of [Apache Felix Configuration Admin](https://github.com/apache/felix-dev/tree/master/configadmin) you can already benefit from the fact that you can interact with Configuration Admin through the Gogo shell with the commands
 
-Well, it turns out that even if you are using an older version you can still do most of the above provided you create a command from the Configuration Admin service (if the service is available):
+Well, it turns out that even if you are using an older version you can still do most of the above provided you create a command from the Configuration Admin service (if the service is available).
+
+First you may need to setup the command context so that you have a few basic commans:
+
+```bash
+g! addcommand context ${.context}
+```
+*(This gives you access to commands like `servicereference <fqcn|filter>`.)*
+
+Now you can add the config admin service commands with:
 
 ```bash
 g! addcommand cm (service (servicereference "org.osgi.service.cm.ConfigurationAdmin"))
