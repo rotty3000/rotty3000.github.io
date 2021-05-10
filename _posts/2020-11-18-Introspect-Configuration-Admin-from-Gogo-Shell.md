@@ -22,6 +22,16 @@ Configuration PID=foo.bar, factoryPID=null, bundleLocation=?
 Configuration PID=foo.baz, factoryPID=null, bundleLocation=?
 ```
 
+To get all configurations:
+
+```bash
+g! listconfigurations null
+...
+Configuration PID=foo.bar, factoryPID=null, bundleLocation=?
+Configuration PID=foo.baz, factoryPID=null, bundleLocation=?
+...
+```
+
 To get an individual configuration from the list you can use the array syntax:
 
 ```bash
@@ -75,6 +85,33 @@ BundleLocation       ?
 **Note** that now you have a `BundleLocation` of `?` which means it is visible to any bundles that want to read it.
 
 If you don't want the *or create* behaviour it's best to use `listconfigurations` when searching for configurations (it's more powerful anyway since you can filter on any properties of the configurations).
+
+### Configuration Plugins & Processed Properties
+
+If you happen to have a Configuration Admin that implements the 1.6 version of the spec you might also have [Configuration Plugins](https://docs.osgi.org/specification/osgi.cmpn/7.0.0/service.cm.html#i1459884) that are able to alter or interpolate configurations (e.g. [Felix ConfigAdmin Interpolation Plugin](https://github.com/apache/felix-dev/tree/master/configadmin-plugins/interpolation).)
+
+Suppose you have this FileInstall config called `game.pid.config` which uses Felix Interpolation Plugin interpolation:
+
+```properties
+player.initial.lives="$[env:player_initial_lives]"
+player.maximum-lives="5"
+```
+
+You'd want to call the `getProcessedProperties` method of `Configuration` to cause plugins to execute over the properties. This method does have one argument, a `ServiceReference` to a service that can contextualize the processing (i.e. to find properties/files for instance.)
+
+In the case of the Felix Interpolation Plugin all you need is a `ServiceReference` to the `ConfigurationAdmin` service itself:
+
+```bash
+g! sr = servicereference org.osgi.service.cm.ConfigurationAdmin
+```
+
+With that you can call the `getProcessedProperties` method to see the properties fully resolved:
+
+```bash
+g! (getconfiguration "game.pid") processedproperties $sr
+player.initial.lives 3
+player.maximum-lives 5
+```
 
 ### Create configurations from scratch
 
