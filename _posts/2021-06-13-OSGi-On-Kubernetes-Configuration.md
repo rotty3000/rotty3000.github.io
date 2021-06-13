@@ -193,6 +193,49 @@ Interestingly, if you recall the note about the syntax of the configuration file
 
 you should be aware that FileInstall has built in interpolation for environment variables using the `env:` prefix. This allows you to compose configuration using the environment with no additional tooling installed.
 
+### Advanced interpolation using mounted files
+
+Remember those _property-like keys_ we discussed earlier? As was just stated a ConfigMap volume will cause these to be mounted as individual files. FileInstall will gladly ignore them, however it could be interesting, particularly if the contents of the directory comes from different ConfigMaps, to have a more advanced interpolation mechanism that would allow those to be used as a source of values.
+
+As it turns out the Apache Felix project provides a companion bundle that adds exactly this functionality via a Configuration Plugin. This bundle is called [`org.apache.felix.configadmin.plugin.interpolation`](https://github.com/apache/felix-dev/tree/master/configadmin-plugins/interpolation) and it's already part of the base image we're using in the examples.
+
+We configure the Felix interpolation plugin using system properties.
+
+The first property tells Felix Config Admin (the implementation of OSGi Configuration Admin) to require the plugin before processing any configuration:
+
+```properties
+felix.cm.config.plugins=org.apache.felix.configadmin.plugin.interpolation
+```
+
+This second property tells the plugin which directory to search for values:
+
+```properties
+org.apache.felix.configadmin.plugin.interpolation.secretsdir=/app/configs
+```
+
+With that in mind, consider the 2 following data sections from 2 separate ConfigMaps:
+
+```yaml
+## ConfigMap #1
+# assume this is mounted as `/app/configs/values`
+data:
+  player_initial_lives: "3"
+```
+
+```yaml
+## ConfigMap #2
+# assume this is mounted as `/app/configs/files`
+data:
+  game.pid.config: |
+    player.initial.lives="$[secret:values/player_initial_lives;type=long]"
+    player.maximum.lives=i"5"
+    colors="$[secret:colors;type=String[];delimiter=|;default=green|red|blue]"
+```
+
+As you can see with the syntax provided by the Felix interpolation plugin allows us to refer to ConfigMap files as interpolation values.
+
+You'll also note that Felix interpolation plugin has more advanced capabilities like **rich type coercion** and the ability to **provide defaults for missing values**.
+
 ### Dynamic reaction to configuration changes
 
 Many software systems are capable of gracefully handling changes in configuration without requiring full restarts. For example [Apache HTTPD Server](https://httpd.apache.org) can use it's [`graceful`](https://httpd.apache.org/docs/current/stopping.html#graceful) restart mode to smoothly reload it's configuration and automatically adjust its behaviour accordingly. [NGINX](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/) offers a similar functionality and so do many other systems.
