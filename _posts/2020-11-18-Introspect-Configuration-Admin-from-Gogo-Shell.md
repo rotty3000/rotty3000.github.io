@@ -192,7 +192,7 @@ Earlier I mentioned:
 
 Well, it turns out that even if you are using an older version you can still do most of the above provided you create a command from the Configuration Admin service (if the service is available).
 
-First you may need to setup the command context so that you have a few basic commans:
+First you may need to setup the command context so that you have a few basic commands:
 
 ```bash
 g! addcommand context ${.context}

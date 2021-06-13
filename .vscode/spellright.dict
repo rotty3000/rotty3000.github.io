@@ -2,3 +2,8 @@ deployable
 natively
 HTTPD
 NGINX
+listconfigurations
+getconfiguration
+PID
+createfactoryconfiguration
+getfactoryconfiguration
