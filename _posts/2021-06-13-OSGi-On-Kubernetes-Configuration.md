@@ -1,5 +1,5 @@
 ---
-title: OSGi On Kubernetes: Configuration
+title: OSGi On Kubernetes - Configuration
 excerpt: Supercharge your Kubernetes apps with real-time configuration updates using OSGi Configuration Admin.
 ---
 
