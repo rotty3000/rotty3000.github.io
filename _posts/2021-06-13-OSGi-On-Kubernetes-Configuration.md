@@ -131,7 +131,7 @@ Now that the volume is defined we can *mount* it into the pod using the `volumeM
         readOnly: true
 ```
 
-The mount is set to be located at `/app/configs`. In this case the image we're using already listens to this directory using [Apache Felix FileInstall](https://felix.apache.org/documentation/subprojects/apache-felix-file-install.html); an OSGi bundle that manages OSGi configurations from the file system on demand. A perfect companion for Kubernetes ConfigMaps.
+The mount is set to be located at `/app/configs`. In this case the image we're using already listens to this directory using [Apache Felix FileInstall](https://felix.apache.org/documentation/subprojects/apache-felix-file-install.html); an OSGi bundle that manages OSGi configurations from the file system on demand. A perfect companion for Kubernetes ConfigMaps. FileInstall is configured to do this using the system property `felix.fileinstall.dir=/app/configs`.
 
 ### Mounted files
 
