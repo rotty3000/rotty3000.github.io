@@ -135,7 +135,9 @@ The mount is set to be located at `/app/configs`. In this case the image we're u
 
 ### Mounted files
 
-You should note that as configured the volume will cause _each key_ in the ConfigMap to be mounted as a separate file in the mount directory (the value of each pair being the contents of the file). This is great because FileInstall automatically detects and manages files that end with `.config` (or the older `.cfg`) identified in it's scanned directory. _(Unknown files will be ignored.)_
+You should note that as configured the volume will cause _each key_ in the ConfigMap to be mounted as a separate file in the mount directory (the value of each pair being the contents of the file). This is great because FileInstall automatically detects and manages files that end with `.config` (or the older `.cfg`) identified in it's scanned directory	. _(Unknown files will be ignored.)_
+
+#### Mounting specific entries
 
 You _can_ pick and choose which keys of the ConfigMap are loaded as files by adding an `items` array:
 
@@ -154,6 +156,8 @@ You _can_ pick and choose which keys of the ConfigMap are loaded as files by add
 ```
 
 However; I don't recommend the `items` approach in the OSGi Configuration scenario in the default case because it forces a duplication of the same information in two places; the ConfigMap and the `volumes` definition. I suggest lettings the ConfigMap be the source of truth and I'll explain why a little later.
+
+#### Sub-directory scans
 
 By default FileInstall scans sub-directories as well, so create any hierarchy that suites your needs by mounting the ConfigMap in any sub-directory of the path scanned by FileInstall. This is handy for grouping related configuration files.
 
