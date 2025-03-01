@@ -1,5 +1,5 @@
 ---
-title: OSGi On Kubernetes: Optimizing Java Docker Images with OSGi
+title: "OSGi On Kubernetes: Optimizing Java Docker Images with OSGi"
 excerpt: Streamline your Java Docker images by leveraging the powers of OSGi build tools.
 ---
 
