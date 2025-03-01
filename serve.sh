@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bundle exec jekyll serve --livereload --watch --incremental
+bundle exec jekyll serve --livereload --watch --incremental --drafts
