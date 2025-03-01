@@ -93,7 +93,6 @@ defaults:
       share_on:
         - facebook
         - linkedin
-
   # _pages
   - scope:
       path: ""
