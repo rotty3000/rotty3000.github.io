@@ -25,22 +25,21 @@
 title: rotty3000.doublebite.com
 logo: "/assets/images/site-logo.svg"
 name: rotty3000.doublebite.com
-email: rotty3000@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   My personal thoughts.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rotty3000.doublebite.com" # the base hostname & protocol for your site, e.g. http://example.com
 repository: "rotty3000/rotty3000.github.io"
-twitter_username: rotty3000
 github_username:  rotty3000
+linkedin_username: raymond-auge
 
 permalink:   /:categories/:title/
 breadcrumbs: true
 
 # Build settings
 #theme: minimal-mistakes-jekyll
-remote_theme: "mmistakes/minimal-mistakes@4.22.0"
-minimal_mistakes_skin: "contrast" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "dark" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 plugins:
   - jekyll-remote-theme
@@ -71,18 +70,14 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-twitter:
-  username: "rotty3000"
-
 # Site owner
 author:
   name: Raymond Augé
   avatar: "/assets/images/bio-photo.jpg"
   bio: "My personal thoughts."
-  #email: rotty3000@gmail.com
   location: "Ontario, Canada"
-  twitter: rotty3000
   github: rotty3000
+  linkedin: raymond-auge
 
 defaults:
   # _posts
@@ -95,6 +90,10 @@ defaults:
       author_profile: true
       read_time: true
       share: true
+      share_on:
+        - facebook
+        - linkedin
+
   # _pages
   - scope:
       path: ""

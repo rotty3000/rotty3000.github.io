@@ -22,3 +22,10 @@ gem install jekyll bundler
 ```shell
 bundle update
 ```
+
+### Refresh the build caches
+
+```shell
+bundle exec jekyll clean
+```
+
