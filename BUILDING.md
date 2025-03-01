@@ -16,3 +16,9 @@ source ~/.profile
 ```
 gem install jekyll bundler
 ```
+
+### Update Dependencies
+
+```shell
+bundle update
+```
