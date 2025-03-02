@@ -3,6 +3,7 @@ title: "Announcing Gateman - Waste Not, Want Not!"
 excerpt: "Recently, Kubernetes has me thinking about how to avoid wastefulness in the scheduling of workloads. Gateman to the rescue!"
 mermaid: true
 tags: [kubernetes, gateman, cel]
+date: 2025-03-02 19:00:00 -0500
 ---
 > #### waste not, want not
 > `PROVERB`<br/>
