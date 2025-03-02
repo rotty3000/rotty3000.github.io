@@ -32,6 +32,7 @@ url: "https://rotty3000.doublebite.com" # the base hostname & protocol for your 
 repository: "rotty3000/rotty3000.github.io"
 github_username:  rotty3000
 linkedin_username: raymond-auge
+enable_copy_code_button: true
 
 permalink:   /:categories/:title/
 breadcrumbs: true
