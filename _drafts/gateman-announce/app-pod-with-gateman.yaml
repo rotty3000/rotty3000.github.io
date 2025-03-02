@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: application
+  annotations:
+    gateman.kdex.dev/db-pod: |
+      {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "database",
+        "expression": "resource.status.phase == 'Running'"
+      }
+    gateman.kdex.dev/db-secret: |
+      {
+        "apiVersion": "v1",
+        "kind": "Secret",
+        "name": "db-secret"
+      }
+spec:
+  containers:
+  - name: application
+    image: nginx
+    env:
+    - name: DB_HOST
+      value: database
+    - name: DB_PORT
+      value: "5432"
+    envFrom:
+    - secretRef:
+        name: db-secret
+  schedulingGates:
+  - name: gateman.kdex.dev/database
+  - name: gateman.kdex.dev/db-secret

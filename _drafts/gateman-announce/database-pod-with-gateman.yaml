@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: database
+  annotations:
+    gateman.kdex.dev/db-secret: |
+      {
+        "apiVersion": "v1",
+        "kind": "Secret",
+        "name": "db-secret"
+      }
+spec:
+  containers:
+  - name: database
+    image: postgres
+    envFrom:
+    - secretRef:
+        name: db-secret
+  schedulingGates:
+  - name: gateman.kdex.dev/db-secret
