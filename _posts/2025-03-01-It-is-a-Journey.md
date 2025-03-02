@@ -1,7 +1,7 @@
 ---
 title: It's a Journey
 excerpt: About my recent transition from mostly Java to mostly Kubernetes and Go.
-tags: kubernetes go
+tags: [kubernetes, go]
 ---
 
 It's been a long time since I've written publicly. I've been busy with work and life. I'm sure everyone can relate.
