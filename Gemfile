@@ -32,6 +32,6 @@ gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
 gem "jekyll-remote-theme"
 gem "minimal-mistakes-jekyll"
 
-gem "faraday-retry", "~> 2.2"
+gem "faraday-retry", "~> 2.3"
 
 gem "webrick", "~> 1.9"
