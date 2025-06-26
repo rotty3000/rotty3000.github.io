@@ -3,9 +3,8 @@ kind: Pod
 metadata:
   name: database
   annotations:
-    gateman.kdex.dev/db-secret: |
+    k8s.ksgate.org/db-secret: |
       {
-        "apiVersion": "v1",
         "kind": "Secret",
         "name": "db-secret"
       }
@@ -17,4 +16,4 @@ spec:
     - secretRef:
         name: db-secret
   schedulingGates:
-  - name: gateman.kdex.dev/db-secret
+  - name: k8s.ksgate.org/db-secret
