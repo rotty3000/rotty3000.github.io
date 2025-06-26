@@ -10,11 +10,11 @@ date: 2025-06-25 19:00:00 -0500
 > if you use a commodity or resource carefully and without extravagance you will never be in need.
 
 Recently, there's a ton of energy being spent in the Kubernetes ecosystem thinking about how to save costs.
-KSGate is a prototype I've been working on to provide a generalized and declarative solution to scheduling.
+[KSGate](https://github.com/ksgate/ksgate) is a prototype I've been working on to provide a generalized and declarative solution to scheduling.
 One big side effect of strict scheduling is the reduction of costly resources by avoiding two aspects of 
 Kubernetes that really tend to annoy me; wasteful scheduling and weak service dependencies.
 
-Let me start by talking about these two things and then I'll explain how my experiment (KSGate) plays a role in addressing them.
+Let me start by talking about these two things and then I'll explain how my experiment ([KSGate](https://github.com/ksgate/ksgate)) plays a role in addressing them.
 
 We'll start with...
 
@@ -114,7 +114,7 @@ As it turns out, there is a way to do this. We could use the `metadata.annotatio
 
 This approach of pairing a scheduling gate with a matching annotation, along with a little bit of _semantic-fu_ would allow us to declare conditions directly in the definition that a generic controller could use to determine when the workload is ready to be scheduled and do it in a way that is fully compatible with existing workload definitions.
 
-## KSGate
+## [KSGate](https://github.com/ksgate/ksgate)
 
 I've modelled this idea and I'm working on a [controller](https://github.com/ksgate/ksgate) that will manage the _scheduling gate and annotation pairs_ for us. I've called this controller **KSGate** (*derived from **Kubernetes Scheduling Gates***).
 
